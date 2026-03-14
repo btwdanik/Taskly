@@ -1,5 +1,9 @@
 # Taskly: CLI Task Tracker / TODO
 
+## 🔗 Project URL
+
+[https://github.com/btwdanik/Taskly](https://github.com/btwdanik/Taskly)
+
 ## 📖 Description
 
 **Taskly** is a lightweight command-line interface (CLI) application for managing tasks from the terminal.  
@@ -64,7 +68,3 @@ $ taskly mark-in-progress [-h] id
 
 $ taskly list [-h] [--status {done,todo,in-progress}]
 ```
-
-## 🔗 Project URL
-
-[Taskly on GitHub](https://github.com/btwdanik/Taskly)
