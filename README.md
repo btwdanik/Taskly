@@ -63,3 +63,8 @@ $ taskly mark-done [-h] id
 $ taskly mark-in-progress [-h] id
 
 $ taskly list [-h] [--status {done,todo,in-progress}]
+```
+
+## 🔗 Project URL
+
+[Taskly on GitHub](https://github.com/btwdanik/Taskly)
