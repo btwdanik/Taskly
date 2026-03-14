@@ -46,7 +46,7 @@ The project is built with Python and stores all task data in a JSON file, making
 Clone the repository:
 
 ```bash
-pip install https://github.com/btwdanik/Taskly.git
+pip install git+https://github.com/btwdanik/Taskly.git
 ```
 
 ## 🚀 Usage
