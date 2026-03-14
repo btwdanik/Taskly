@@ -1,13 +1,16 @@
 [project]
 name = "Taskly"
-version = "0.1.0"
+version = "0.2.0"
 description = "A CLI application to manage tasks."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = ["rich>=14.3.3", "dotenv>=0.9.9"]
 
 [project.urls]
-Homepage = "https://github.com/brkahmed/taskly"
+Homepage = "https://github.com/btwdanik/Taskly"
 
 [project.scripts]
 taskly = "taskly:main"
+
+[tool.setuptools]
+py-modules = ["taskly", "task_repo", "dependency"]

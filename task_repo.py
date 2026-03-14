@@ -95,7 +95,7 @@ class TaskRepo:
                 print(task)
                 status = "[green]Done[/green]" if task["status"] == "Done" else ("[yellow]In progress[/yellow]" if task["status"] == "In progress" else "[red]Not done[/red]")
                 self.table.add_row(
-        str(task["id"]),
+                    str(task["id"]),
                     task["description"],
                     status,
                     task["createdAt"],
@@ -109,7 +109,7 @@ class TaskRepo:
             for task in json.load(f):
                 if task["status"] == "Done":
                     self.table.add_row(
-            str(task["id"]),
+                        str(task["id"]),
                         task["description"],
                         "[green]Done[/green]",
                         task["createdAt"],
@@ -122,7 +122,7 @@ class TaskRepo:
             for task in json.load(f):
                 if task["status"] == "Not done":
                     self.table.add_row(
-            str(task["id"]),
+                        str(task["id"]),
                         task["description"],
                         "[red]Not done[/red]",
                         task["createdAt"],
@@ -136,7 +136,7 @@ class TaskRepo:
             for task in json.load(f):
                 if task["status"] == "In progress":
                     self.table.add_row(
-            str(task["id"]),
+                        str(task["id"]),
                         task["description"],
                         "[yellow]In progress[/yellow]",
                         task["createdAt"],
