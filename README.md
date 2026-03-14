@@ -64,5 +64,3 @@ $ taskly mark-in-progress [-h] id
 
 $ taskly list [-h] [--status {done,todo,in-progress}]
 ```
-
-https://roadmap.sh/projects/task-tracker
