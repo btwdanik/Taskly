@@ -16,20 +16,20 @@ add_parser = subparsers.add_parser("add", help="Добавить задачу")
 add_parser.add_argument("description", type=str)
 
 update_parser = subparsers.add_parser("update", help="Обновить задачу")
-update_parser.add_argument("id", type=int)
+update_parser.add_argument("id", type=str)
 update_parser.add_argument("description", type=str)
 
 delete_parser = subparsers.add_parser("delete", help="Удалить задачу")
-delete_parser.add_argument("id", type=int)
+delete_parser.add_argument("id", type=str)
 
 done_parser = subparsers.add_parser("mark-done", help="Пометить задачу как выполненную")
-done_parser.add_argument("id", type=int)
+done_parser.add_argument("id", type=str)
 
 not_done_parser = subparsers.add_parser("mark-not-done", help="Пометить задачу как не выполненную")
-not_done_parser.add_argument("id", type=int)
+not_done_parser.add_argument("id", type=str)
 
 progress_parser = subparsers.add_parser("mark-in-progress", help="Пометить задачу как выполняемую")
-progress_parser.add_argument("id", type=int)
+progress_parser.add_argument("id", type=str)
 
 list_parser = subparsers.add_parser("list", help="Показать все задачи")
 list_parser.add_argument(

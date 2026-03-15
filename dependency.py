@@ -3,8 +3,8 @@ from dataclasses import dataclass, field
 
 @dataclass(frozen=True)
 class Schema:
-    id: int = 0
-    description: str = 'Test'
+    description: str
+    id: str = "0"
     status: str = 'In progress'
     createdAt: datetime = field(default_factory=datetime.now)
     updatedAt: datetime = field(default_factory=datetime.now)
