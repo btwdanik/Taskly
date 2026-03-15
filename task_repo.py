@@ -109,32 +109,56 @@ class TaskRepo:
             self.console.print("[red]The task was not found[/red]")
 
     def task_list(self) -> None:
-        with open(file=self.name_file, mode='r') as f:
-            data = json.load(f)
-            for task in data:
-                console_table(self.table, data[task])
-            self.console.print("\n", self.table, "\n")
+        try:
+            with open(file=self.name_file, mode='r') as f:
+                data = json.load(f)
+                for task in data:
+                    console_table(self.table, data[task])
+                self.console.print("\n", self.table, "\n")
+        except (FileNotFoundError, json.decoder.JSONDecodeError):
+            data = {}
+            with open(file=self.name_file, mode='w', encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+                self.console.print("\n", self.table, "\n")
 
     def task_list_done(self) -> None:
-        with open(file=self.name_file, mode='r') as f:
-            data = json.load(f)
-            for task in data:
-                if data[task]["status"] == "Done":
-                    console_table(self.table, data[task])
-            self.console.print("\n", self.table, "\n")
+        try:
+            with open(file=self.name_file, mode='r') as f:
+                data = json.load(f)
+                for task in data:
+                    if data[task]["status"] == "Done":
+                        console_table(self.table, data[task])
+                self.console.print("\n", self.table, "\n")
+        except (FileNotFoundError, json.decoder.JSONDecodeError):
+            data = {}
+            with open(file=self.name_file, mode='w', encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+                self.console.print("\n", self.table, "\n")
 
     def task_list_not_done(self) -> None:
-        with open(file=self.name_file, mode='r') as f:
-            data = json.load(f)
-            for task in data:
-                if data[task]["status"] == "Not done":
-                    console_table(self.table, data[task])
-            self.console.print("\n", self.table, "\n")
+        try:
+            with open(file=self.name_file, mode='r') as f:
+                data = json.load(f)
+                for task in data:
+                    if data[task]["status"] == "Not done":
+                        console_table(self.table, data[task])
+                self.console.print("\n", self.table, "\n")
+        except (FileNotFoundError, json.decoder.JSONDecodeError):
+            data = {}
+            with open(file=self.name_file, mode='w', encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+                self.console.print("\n", self.table, "\n")
 
     def task_list_in_progress(self) -> None:
-        with open(file=self.name_file, mode='r') as f:
-            data = json.load(f)
-            for task in data:
-                if data[task]["status"] == "In progress":
-                    console_table(self.table, data[task])
-            self.console.print("\n", self.table, "\n")
+        try:
+            with open(file=self.name_file, mode='r') as f:
+                data = json.load(f)
+                for task in data:
+                    if data[task]["status"] == "In progress":
+                        console_table(self.table, data[task])
+                self.console.print("\n", self.table, "\n")
+        except (FileNotFoundError, json.decoder.JSONDecodeError):
+            data = {}
+            with open(file=self.name_file, mode='w', encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+                self.console.print("\n", self.table, "\n")

@@ -1,8 +1,11 @@
 import argparse
 
 from task_repo import TaskRepo
+from utils import get_data_path
 
-taskly = TaskRepo(name_file="tasks.json")
+FILEPATH = get_data_path()
+
+taskly = TaskRepo(name_file=FILEPATH)
 
 parser = argparse.ArgumentParser(description="Taskly")
 subparsers = parser.add_subparsers(dest="command", required=True)
