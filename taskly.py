@@ -1,13 +1,8 @@
-import os
 import argparse
 
-from dotenv import load_dotenv
 from task_repo import TaskRepo
 
-load_dotenv()
-
-name_storage = os.getenv("NAME_STORAGE")
-taskly = TaskRepo(name_file=name_storage)
+taskly = TaskRepo(name_file="tasks.json")
 
 parser = argparse.ArgumentParser(description="Taskly")
 subparsers = parser.add_subparsers(dest="command", required=True)
@@ -37,7 +32,6 @@ list_parser.add_argument(
     choices=["done", "todo", "in-progress"],
     help="Фильтр по статусу"
 )
-
 
 def main():
     payload = parser.parse_args().__dict__
