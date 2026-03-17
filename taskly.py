@@ -11,11 +11,11 @@ parser = argparse.ArgumentParser(description="Taskly")
 subparsers = parser.add_subparsers(dest="command", required=True)
 
 add_parser = subparsers.add_parser("add", help="Добавить задачу")
-add_parser.add_argument("description", type=str)
+add_parser.add_argument("description", type=str, nargs='+')
 
 update_parser = subparsers.add_parser("update", help="Обновить задачу")
 update_parser.add_argument("id", type=str)
-update_parser.add_argument("description", type=str)
+update_parser.add_argument("description", type=str, nargs='+')
 
 delete_parser = subparsers.add_parser("delete", help="Удалить задачу")
 delete_parser.add_argument("id", type=str)
@@ -39,9 +39,9 @@ list_parser.add_argument(
 def main():
     payload = parser.parse_args().__dict__
     if payload["command"] == "add":
-        taskly.task_add(payload["description"])
+        taskly.task_add(' '.join(payload["description"]))
     elif payload["command"] == "update":
-        taskly.task_update(payload["id"], payload["description"])
+        taskly.task_update(payload["id"], ' '.join(payload["description"]))
     elif payload["command"] == "delete":
         taskly.task_delete(payload["id"])
 
