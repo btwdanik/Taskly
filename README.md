@@ -36,8 +36,9 @@ The project is built with Python and stores all task data in a JSON file, making
   - `task_list(...)` → Returns tasks, optionally filtered
   - Handles reading/writing tasks to JSON
 
-- **dependency.py** → Auxiliary utilities and shared helpers
+- **dependency.py** → Dependency, ensures proper transport for other files
 
+- **utils.py** → Auxiliary utilities and shared helpers
 
 ---
 
